@@ -69,7 +69,7 @@ export default function Home() {
   };
 
   return (
-    <div className="ret-app">
+    <div className={`ret-app ${activeCategory === "Informação" ? "info-mode" : ""}`}>
       <div className="top-promo"><Sparkles size={14} /> OFERTA ESPECIAL <span>•</span> atendimento direto pelo WhatsApp <Sparkles size={14} /></div>
       <header className="ret-header">
         <button className="menu-button" aria-label="Abrir menu" onClick={() => setMenuOpen(!menuOpen)}><Menu size={23} /></button>
@@ -93,7 +93,7 @@ export default function Home() {
 
         <section className="featured-categories" id="categorias"><div className="section-heading"><div><span className="section-label">ESCOLHA SUA CATEGORIA</span><h2>{t.categoryTitle}</h2></div><div className="carousel-actions"><button aria-label="Anterior"><ChevronLeft size={17} /></button><button aria-label="Próximo"><ChevronRight size={17} /></button></div></div><div className="category-strip"><button className="category-feature feature-red" onClick={() => { setActiveCategory("Produtos Android"); document.getElementById("catalogo")?.scrollIntoView({ behavior: "smooth" }); }}><span><Smartphone className="category-feature-icon" size={17} />PRODUTOS<br /><em>ANDROID</em></span><b>→</b></button><button className="category-feature feature-green" onClick={() => { setActiveCategory("Produtos Emulador"); document.getElementById("catalogo")?.scrollIntoView({ behavior: "smooth" }); }}><span><Monitor className="category-feature-icon" size={17} />PRODUTOS<br /><em>EMULADOR</em></span><b>→</b></button><button className="category-feature feature-blue" onClick={() => { setActiveCategory("Produtos iOS "); document.getElementById("catalogo")?.scrollIntoView({ behavior: "smooth" }); }}><span>Produtos<br /><em>iOS </em></span><b>→</b></button></div></section>
 
-        <section className="catalog" id="catalogo"><div className="catalog-title"><div><span className="section-label">{t.official}</span><h2>{t.catalogTitle}</h2></div><button onClick={() => setActiveCategory("Todos")}>{t.all} <ArrowRight size={14} /></button></div><div className="categories">{["Informação", ...categories].map((category) => <button key={category} className={activeCategory === category ? "active" : ""} onClick={() => setActiveCategory(category)}>{category}</button>)}</div>{activeCategory === "Informação" ? <>
+        <section className={`catalog ${activeCategory === "Informação" ? "catalog-info-mode" : ""}`} id="catalogo"><div className="catalog-title"><div><span className="section-label">{t.official}</span><h2>{t.catalogTitle}</h2></div><button onClick={() => setActiveCategory("Todos")}>{t.all} <ArrowRight size={14} /></button></div><div className="categories">{["Informação", ...categories].map((category) => <button key={category} className={activeCategory === category ? "active" : ""} onClick={() => setActiveCategory(category)}>{category}</button>)}</div>{activeCategory === "Informação" ? <>
               <div className="info-panel"><div className="info-art"><img src="/retzada-cheats.png" alt="RETZADA Cheats" /></div></div>
               <div className="info-copy">
                 <span className="section-label">RET CHEATS / INFORMAÇÃO</span>
