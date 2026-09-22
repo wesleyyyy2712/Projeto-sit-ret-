@@ -159,3 +159,13 @@
 .info-art::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, transparent 90%, #060708 100%), linear-gradient(90deg, rgba(6,7,8,.08), transparent 16%, transparent 84%, rgba(6,7,8,.08)); }
 .info-art img { position: relative; z-index: 1; display: block; width: 100%; height: auto !important; min-height: 0 !important; object-fit: initial; object-position: center; -webkit-mask-image: none !important; mask-image: none !important; }
 @media (max-width: 700px) { .info-panel { margin-top: 10px; } }
+
+/* Conteúdo da tela Informação, separado da grade de produtos */
+.info-copy { position: relative; z-index: 1; padding: 28px 8px 8px; color: #f1e9eb; }
+.info-copy h3 { margin: 13px 0 12px; color: #fff; font: 600 clamp(28px, 4vw, 42px)/.98 'Sora', sans-serif; letter-spacing: -.07em; }
+.info-copy p { max-width: 620px; margin: 0; color: #c2b8bc; font-size: 13px; line-height: 1.75; }
+.info-points { display: grid; gap: 10px; margin: 20px 0 2px; color: #f1e9eb; font-size: 11px; }
+.info-points span { display: flex; align-items: center; gap: 9px; }
+.info-points svg { color: #ff5e78; }
+.info-copy .hero-button { margin-top: 23px; }
+@media (max-width: 700px) { .info-copy { padding: 24px 6px 8px; } .info-copy h3 { font-size: 30px; } .info-copy p { font-size: 12px; } }
