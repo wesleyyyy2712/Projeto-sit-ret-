@@ -153,9 +153,9 @@
 /* Símbolo Apple nos cards de Produtos iOS */
 .apple-card-icon { color: currentColor; font: 700 17px/1 Arial, sans-serif; }
 
-/* Arte de informação integrada ao fundo do catálogo, sem moldura externa */
-.info-panel { position: relative; width: 100%; margin-top: 16px; overflow: hidden; background: transparent; }
-.info-art { position: relative; width: 100%; height: clamp(290px, 48vw, 530px); overflow: hidden; background: transparent; }
-.info-art::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, transparent 74%, #060708 100%), linear-gradient(90deg, rgba(6,7,8,.16), transparent 16%, transparent 84%, rgba(6,7,8,.16)); }
-.info-art img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; -webkit-mask-image: linear-gradient(to bottom, #000 87%, transparent 100%); mask-image: linear-gradient(to bottom, #000 87%, transparent 100%); }
-@media (max-width: 700px) { .info-panel { margin-top: 10px; } .info-art { height: min(104vw, 510px); } .info-art img { object-position: center; } }
+/* Banner integrado ao catálogo: imagem inteira, sem moldura e com atmosfera vermelha */
+.info-panel { position: relative; width: 100%; margin-top: 16px; overflow: hidden; background: radial-gradient(ellipse at 50% 38%, rgba(130,10,25,.42), transparent 63%); }
+.info-art { position: relative; width: 100%; aspect-ratio: 1 / 1; overflow: hidden; background: transparent; }
+.info-art::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, transparent 82%, #060708 100%), linear-gradient(90deg, rgba(6,7,8,.08), transparent 16%, transparent 84%, rgba(6,7,8,.08)); }
+.info-art img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+@media (max-width: 700px) { .info-panel { margin-top: 10px; } }
