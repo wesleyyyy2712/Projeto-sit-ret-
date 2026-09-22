@@ -152,3 +152,20 @@
 
 /* Símbolo Apple nos cards de Produtos iOS */
 .apple-card-icon { color: currentColor; font: 700 17px/1 Arial, sans-serif; }
+
+/* Painel de informação integrado ao catálogo */
+.info-panel { position: relative; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(300px, .92fr); gap: 34px; align-items: stretch; min-height: 330px; margin-top: 24px; overflow: hidden; padding: 18px; border: 1px solid rgba(255,255,255,.14); border-radius: 22px; background: radial-gradient(circle at 8% 20%, rgba(255,35,66,.22), transparent 30%), linear-gradient(135deg, rgba(32,9,15,.96), rgba(12,13,16,.98) 58%, rgba(37,13,20,.94)); box-shadow: 0 24px 70px rgba(0,0,0,.38), inset 0 1px rgba(255,255,255,.08); }
+.info-panel::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(120deg, transparent 0 38%, rgba(255,255,255,.06) 38.2%, transparent 38.8%), repeating-linear-gradient(135deg, transparent 0 28px, rgba(255,255,255,.035) 29px 30px); opacity: .55; }
+.info-art { position: relative; min-height: 292px; overflow: hidden; border: 1px solid rgba(255,82,103,.34); border-radius: 17px; background: #21090d; box-shadow: 0 0 44px rgba(255,31,60,.2); }
+.info-art::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 48%, rgba(7,7,9,.48)), linear-gradient(90deg, rgba(255,18,44,.16), transparent 45%, rgba(0,0,0,.3)); pointer-events: none; }
+.info-art img { position: relative; z-index: 1; display: block; width: 100%; height: 100%; min-height: 292px; object-fit: cover; object-position: center; transition: transform .5s ease; }
+.info-art:hover img { transform: scale(1.035); }
+.info-art-glow { position: absolute; z-index: 2; width: 190px; height: 190px; right: -30px; bottom: -70px; border-radius: 50%; background: #ff173b; filter: blur(70px); opacity: .25; }
+.info-copy { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: center; padding: 22px 24px 22px 0; }
+.info-copy h3 { margin: 13px 0 12px; color: #fff; font: 600 clamp(27px, 4vw, 42px)/.98 'Sora', sans-serif; letter-spacing: -.07em; }
+.info-copy p { max-width: 420px; margin: 0; color: #c2b8bc; font-size: 13px; line-height: 1.75; }
+.info-points { display: grid; gap: 10px; margin: 20px 0 2px; color: #f1e9eb; font-size: 11px; }
+.info-points span { display: flex; align-items: center; gap: 9px; }
+.info-points svg { color: #ff5e78; }
+.info-copy .hero-button { align-self: flex-start; margin-top: 23px; }
+@media (max-width: 700px) { .info-panel { grid-template-columns: 1fr; gap: 0; padding: 10px; } .info-art { min-height: 220px; border-radius: 15px 15px 10px 10px; } .info-art img { min-height: 220px; } .info-copy { padding: 22px 12px 18px; } .info-copy h3 { font-size: 30px; } .info-copy p { font-size: 12px; } }
